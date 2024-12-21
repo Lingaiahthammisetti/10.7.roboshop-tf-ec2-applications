@@ -3,7 +3,7 @@ resource "aws_instance" "roboshop" {
     ami           = data.aws_ami.rhel_info.id
     instance_type = each.value
     vpc_security_group_ids = [var.allow_all]
-    user_data = file("${path.module}/install_{{each.key}}.sh")
+    user_data = file("${path.module}/install_${each.key}.sh")
 
     tags = {
         Name = each.key
