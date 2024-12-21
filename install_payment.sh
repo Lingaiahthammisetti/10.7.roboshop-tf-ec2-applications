@@ -16,7 +16,7 @@ cd /app
 unzip /tmp/payment.zip 
 pip3.11 install -r requirements.txt 
 
-echo " [Unit]
+echo "[Unit]
 Description=Payment Service
 
 [Service]
@@ -35,7 +35,7 @@ ExecStop=/bin/kill -9 $MAINPID
 SyslogIdentifier=payment
 
 [Install]
-WantedBy=multi-user.target " > /etc/systemd/system/payment.service
+WantedBy=multi-user.target"> /etc/systemd/system/payment.service
 
 systemctl daemon-reload 
 systemctl enable payment 

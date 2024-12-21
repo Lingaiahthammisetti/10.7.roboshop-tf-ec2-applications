@@ -18,7 +18,7 @@ go mod init dispatch
 go get 
 go build 
 
-echo " [Unit]
+echo "[Unit]
 Description = Dispatch Service
 [Service]
 User=roboshop
@@ -29,7 +29,7 @@ ExecStart=/app/dispatch
 SyslogIdentifier=dispatch
 
 [Install]
-WantedBy=multi-user.target " > /etc/systemd/system/dispatch.service 
+WantedBy=multi-user.target"> /etc/systemd/system/dispatch.service 
 
 systemctl daemon-reload
 systemctl enable dispatch 

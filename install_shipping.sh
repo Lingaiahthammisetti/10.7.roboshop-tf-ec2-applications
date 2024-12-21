@@ -28,7 +28,7 @@ ExecStart=/bin/java -jar /app/shipping.jar
 SyslogIdentifier=shipping
 
 [Install]
-WantedBy=multi-user.target" > /etc/systemd/system/shipping.service 
+WantedBy=multi-user.target">/etc/systemd/system/shipping.service 
 
 
 systemctl daemon-reload 

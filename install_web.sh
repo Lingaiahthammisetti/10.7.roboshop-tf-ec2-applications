@@ -23,7 +23,7 @@ location /api/payment/ { proxy_pass http://payment.lingaiah.online:8080/; }
 location /health {
   stub_status on;
   access_log off;
-}" > /etc/nginx/default.d/roboshop.conf
+}"> /etc/nginx/default.d/roboshop.conf
 
 systemctl restart nginx
 

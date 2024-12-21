@@ -25,9 +25,3 @@ variable "zone_id" {
 variable "domain_name" {
   default = "lingaiah.online"
 }
-
-variable "ansible_master" {
-   default = {
-        instance_type  = "t3.small"
-   }
-}

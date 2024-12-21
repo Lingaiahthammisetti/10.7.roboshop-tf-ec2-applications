@@ -20,7 +20,7 @@ cd /app
 unzip /tmp/catalogue.zip
 npm install
 
-echo " [Unit]
+echo "[Unit]
 Description = Catalogue Service
 
 [Service]
@@ -31,7 +31,7 @@ ExecStart=/bin/node /app/server.js
 SyslogIdentifier=catalogue
 
 [Install]
-WantedBy=multi-user.target " > /etc/systemd/system/catalogue.service
+WantedBy=multi-user.target"> /etc/systemd/system/catalogue.service
 
 dnf install -y mongodb-mongosh
 

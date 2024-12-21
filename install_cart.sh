@@ -20,7 +20,7 @@ cd /app
 unzip /tmp/user.zip
 npm install
 
-echo " [Unit]
+echo "[Unit]
 Description = Cart Service
 [Service]
 User=roboshop
@@ -31,7 +31,7 @@ ExecStart=/bin/node /app/server.js
 SyslogIdentifier=cart
 
 [Install]
-WantedBy=multi-user.target" > /etc/systemd/system/cart.service
+WantedBy=multi-user.target"> /etc/systemd/system/cart.service
 
 systemctl daemon-reload
 systemctl enable user
