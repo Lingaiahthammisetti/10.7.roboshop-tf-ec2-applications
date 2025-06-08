@@ -1,3 +1,5 @@
+#!/bin/bash
+
 dnf install python3.11 gcc python3-devel -y 
 
 id roboshop &>> 

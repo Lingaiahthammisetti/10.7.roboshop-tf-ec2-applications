@@ -1,3 +1,5 @@
+#!/bin/bash
+
 dnf install golang -y 
 id roboshop
 if [ $? -ne 0 ]
