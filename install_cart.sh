@@ -19,7 +19,7 @@ mkdir -p /app
 
 curl -o /tmp/cart.zip https://roboshop-builds.s3.amazonaws.com/cart.zip
 cd /app
-unzip /tmp/user.zip
+unzip /tmp/cart.zip
 npm install
 
 echo "[Unit]
@@ -36,5 +36,5 @@ SyslogIdentifier=cart
 WantedBy=multi-user.target"> /etc/systemd/system/cart.service
 
 systemctl daemon-reload
-systemctl enable user
-systemctl start user
+systemctl enable cart
+systemctl start cart

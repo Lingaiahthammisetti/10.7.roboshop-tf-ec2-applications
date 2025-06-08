@@ -2,7 +2,7 @@
 
 dnf install python3.11 gcc python3-devel -y 
 
-id roboshop &>> 
+id roboshop 
 if [ $? -ne 0 ]
 then
     useradd roboshop
