@@ -11,8 +11,7 @@ variable "instances" {
         shipping = "t3.medium"
         payment  = "t3.micro"
         dispatch = "t3.micro"
-       #frontend = "t3.micro"
-        web = "t3.micro"
+        web      = "t3.micro"
     }
 }
 variable "allow_all" {

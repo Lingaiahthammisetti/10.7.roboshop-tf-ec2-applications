@@ -1,24 +1,25 @@
 #!/bin/bash
 
-dnf install golang -y 
+dnf install golang -y
+
 id roboshop
 if [ $? -ne 0 ]
 then
-    useradd roboshop 
-    echo "Adding roboshop user"
+    useradd roboshop
 else
-    echo "roboshop user already exist."
+    echo "roboshop user already exist..."
 fi
 
-rm -rf /app 
-mkdir -p /app 
-curl -L -o /tmp/dispatch.zip https://roboshop-builds.s3.amazonaws.com/dispatch.zip 
+rm -rf /app
+mkdir -p /app
+cd /app
+curl -L -o /tmp/dispatch.zip https://roboshop-builds.s3.amazonaws.com/dispatch.zip
+cd /app
+unzip /tmp/dispatch.zip
 
-cd /app 
-unzip /tmp/dispatch.zip 
 go mod init dispatch
-go get 
-go build 
+go get
+go build
 
 echo "[Unit]
 Description = Dispatch Service
@@ -33,6 +34,6 @@ SyslogIdentifier=dispatch
 [Install]
 WantedBy=multi-user.target"> /etc/systemd/system/dispatch.service 
 
-systemctl daemon-reload
+systemctl daemon-reload 
 systemctl enable dispatch 
-systemctl start dispatch  
+systemctl start dispatch 

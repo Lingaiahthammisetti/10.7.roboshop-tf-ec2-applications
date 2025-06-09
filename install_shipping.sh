@@ -2,10 +2,12 @@
 
 dnf install maven -y 
 
-id roboshop &>> 
+MYSQL_HOST=mysql.lingaiah.online
+
+id roboshop
 if [ $? -ne 0 ]
 then
-    useradd roboshop &>> 
+    useradd roboshop
     echo "Adding roboshop user"
 else
     echo "roboshop user already exist."
@@ -30,29 +32,27 @@ ExecStart=/bin/java -jar /app/shipping.jar
 SyslogIdentifier=shipping
 
 [Install]
-WantedBy=multi-user.target">/etc/systemd/system/shipping.service 
-
+WantedBy=multi-user.target"> /etc/systemd/system/shipping.service 
 
 systemctl daemon-reload 
+
 systemctl enable shipping  
+
 systemctl start shipping 
 
 dnf install mysql -y 
 
-mysql -h $MYSQL_HOST -uroot -pRoboShop@1 -e "use cities"
+mysql -h mysql.lingaiah.online -uroot -pRoboShop@1 -e "use cities"
 if [ $? -ne 0 ]
 then
     echo "Schema is ... LOADING"
-    mysql -h $MYSQL_HOST -uroot -pRoboShop@1 < /app/db/schema.sql
-    echo  "Loading schema"
+    mysql -h mysql.lingaiah.online -uroot -pRoboShop@1 < /app/db/schema.sql
     
-    mysql -h $MYSQL_HOST -uroot -pRoboShop@1 < /app/db/app-user.sql
-    echo  "Loading app user"
+    mysql -h mysql.lingaiah.online -uroot -pRoboShop@1 < /app/db/app-user.sql
    
-    mysql -h $MYSQL_HOST -uroot -pRoboShop@1 < /app/db/master-data.sql
-    echo  "Loading master data "
+    mysql -h mysql.lingaiah.online -uroot -pRoboShop@1 < /app/db/master-data.sql
 else
-    echo "Schema already exists."
+    echo "Schema already exists..."
 fi
 
 systemctl restart shipping

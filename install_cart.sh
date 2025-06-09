@@ -4,6 +4,7 @@ dnf module disable nodejs -y
 dnf module enable nodejs:20 -y
 dnf install nodejs -y
 
+MONGO_HOST=mongodb.lingaiah.online
 id roboshop 
 if [ $? -ne 0 ]
 then
@@ -38,3 +39,4 @@ WantedBy=multi-user.target"> /etc/systemd/system/cart.service
 systemctl daemon-reload
 systemctl enable cart
 systemctl start cart
+
