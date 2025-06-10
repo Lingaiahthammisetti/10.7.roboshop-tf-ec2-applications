@@ -42,3 +42,9 @@ WantedBy=multi-user.target"> /etc/systemd/system/payment.service
 systemctl daemon-reload 
 systemctl enable payment 
 systemctl start payment 
+
+echo "***************************************"
+sudo systemctl status payment
+echo "***************************************"
+netstat -lntp
+echo "***************************************"

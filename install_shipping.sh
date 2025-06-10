@@ -56,3 +56,9 @@ else
 fi
 
 systemctl restart shipping
+
+echo "***************************************"
+sudo systemctl status shipping
+echo "***************************************"
+netstat -lntp
+echo "***************************************"

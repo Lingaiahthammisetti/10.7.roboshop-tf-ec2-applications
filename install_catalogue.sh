@@ -61,3 +61,9 @@ then
 else
     echo "schema already exists."
 fi
+
+echo "***************************************"
+sudo systemctl status catalogue
+echo "***************************************"
+netstat -lntp
+echo "***************************************"

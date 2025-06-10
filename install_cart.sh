@@ -40,3 +40,8 @@ systemctl daemon-reload
 systemctl enable cart
 systemctl start cart
 
+echo "***************************************"
+sudo systemctl status cart
+echo "***************************************"
+netstat -lntp
+echo "***************************************"

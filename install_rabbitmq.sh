@@ -18,3 +18,9 @@ then
 else
     echo "USER already exists."
 fi
+
+echo "***************************************"
+sudo systemctl status rabbitmq-server
+echo "***************************************"
+netstat -lntp
+echo "***************************************"

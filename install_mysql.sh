@@ -5,3 +5,9 @@ systemctl start mysqld
 mysql_secure_installation --set-root-pass RoboShop@1
 systemctl restart mysqld
 mysql -h mysql.lingaiah.online -uroot -pRoboShop@1
+
+echo "***************************************"
+sudo systemctl status mysqld
+echo "***************************************"
+netstat -lntp
+echo "***************************************"
